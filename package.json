@@ -5,11 +5,13 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"build": "vite build",
 		"check-type": "vue-tsc --build --force",
-		"check-lint": "eslint .",
-		"check-format": "prettier . --check",
-		"format": "prettier . --write",
-		"build": "vite build"
+		"check-lint": "biome lint .",
+		"check-format": "biome format .",
+		"check": "biome check .",
+		"fix": "biome check --write .",
+		"format": "biome format --write ."
 	},
 	"dependencies": {
 		"@sonolus/core": "~7.14.1",
@@ -21,7 +23,7 @@
 		"vue": "^3.5.18"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.32.0",
+		"@biomejs/biome": "~2.3.10",
 		"@tailwindcss/vite": "^4.1.18",
 		"@tsconfig/node22": "^22.0.2",
 		"@types/file-saver": "^2.0.7",
@@ -29,16 +31,9 @@
 		"@types/pako": "^2.0.3",
 		"@vitejs/plugin-vue": "^6.0.0",
 		"@vue/tsconfig": "^0.8.1",
-		"eslint": "^9.32.0",
-		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-vue": "^10.3.0",
 		"express": "~5.2.1",
-		"prettier": "^3.6.2",
-		"prettier-plugin-organize-imports": "^4.2.0",
-		"prettier-plugin-tailwindcss": "^0.7.2",
 		"tailwindcss": "^4.1.18",
 		"typescript": "~5.9.3",
-		"typescript-eslint": "^8.51.0",
 		"vite": "^7.0.6",
 		"vite-plugin-arraybuffer": "^0.1.0",
 		"vue-tsc": "^3.0.4"
