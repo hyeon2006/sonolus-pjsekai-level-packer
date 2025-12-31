@@ -1,3 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+    --color-main: rgba(0, 0, 32, 1);
+    --color-surface: rgba(0, 0, 0, 1);
+    --color-overlay-main: rgba(0, 0, 32, 0.9);
+
+    --color-text-normal: rgba(255, 255, 255, 1);
+    --color-text-disabled: rgba(255, 255, 255, 0.25);
+
+    --color-button-normal: rgba(255, 255, 255, 0.125);
+    --color-button-highlighted: rgba(255, 255, 255, 0.25);
+    --color-button-pressed: rgba(255, 255, 255, 0.0625);
+    --color-button-disabled: rgba(255, 255, 255, 0.03125);
+}

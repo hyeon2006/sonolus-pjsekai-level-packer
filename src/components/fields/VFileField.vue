@@ -17,8 +17,8 @@ const onChange = (e: Event) => {
 <template>
     <VField :label>
         <input
-            class="w-full appearance-none bg-button-normal px-2 py-1 transition-colors file:hidden hover:bg-button-highlighted focus:outline-none focus:ring-1 focus:ring-text-normal active:bg-button-pressed"
-            :class="modelValue ? 'text-text-normal' : 'italic text-text-disabled'"
+            class="bg-button-normal hover:bg-button-highlighted focus:ring-text-normal active:bg-button-pressed w-full appearance-none px-2 py-1 transition-colors file:hidden focus:ring-1 focus:outline-none"
+            :class="modelValue ? 'text-text-normal' : 'text-text-disabled italic'"
             type="file"
             :accept
             :required

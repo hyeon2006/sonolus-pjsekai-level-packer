@@ -134,7 +134,7 @@ const onClose = () => {
 
         <div class="mt-8 flex justify-center">
             <input
-                class="min-w-32 bg-button-normal px-2 py-1 font-bold transition-colors hover:bg-button-highlighted focus:outline-none focus:ring-1 focus:ring-text-normal active:bg-button-pressed sm:min-w-36 sm:text-lg"
+                class="bg-button-normal hover:bg-button-highlighted focus:ring-text-normal active:bg-button-pressed min-w-32 px-2 py-1 font-bold transition-colors focus:ring-1 focus:outline-none sm:min-w-36 sm:text-lg"
                 type="submit"
                 value="Pack"
             />
@@ -144,7 +144,7 @@ const onClose = () => {
     <dialog
         v-if="state"
         :ref="(el) => (el as HTMLDialogElement | null)?.showModal()"
-        class="max-w-2xl break-words bg-surface px-12 py-8 text-text-normal backdrop:bg-overlay-main focus:outline-none"
+        class="bg-surface text-text-normal backdrop:bg-overlay-main max-w-2xl px-12 py-8 break-words focus:outline-none"
     >
         <p>
             <template v-if="state.type === 'packing'">Packing...</template>
@@ -158,7 +158,7 @@ const onClose = () => {
 
         <div v-if="state.type !== 'packing'" class="mt-8 flex justify-center">
             <button
-                class="w-32 bg-button-normal px-2 py-1 transition-colors hover:bg-button-highlighted focus:outline-none focus:ring-1 focus:ring-text-normal active:bg-button-pressed"
+                class="bg-button-normal hover:bg-button-highlighted focus:ring-text-normal active:bg-button-pressed w-32 px-2 py-1 transition-colors focus:ring-1 focus:outline-none"
                 @click="onClose"
             >
                 Close

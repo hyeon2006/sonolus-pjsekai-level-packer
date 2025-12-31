@@ -17,7 +17,7 @@ const modelValue = defineModel<number>({ required: true })
     <VField :label>
         <input
             v-model="modelValue"
-            class="w-full appearance-none bg-button-normal px-2 py-1 transition-colors placeholder:italic placeholder:text-text-disabled hover:bg-button-highlighted focus:outline-none focus:ring-1 focus:ring-text-normal active:bg-button-pressed"
+            class="bg-button-normal placeholder:text-text-disabled hover:bg-button-highlighted focus:ring-text-normal active:bg-button-pressed w-full appearance-none px-2 py-1 transition-colors placeholder:italic focus:ring-1 focus:outline-none"
             type="number"
             :placeholder
             :min

@@ -14,7 +14,7 @@ const modelValue = defineModel<T>({ required: true })
     <VField :label>
         <select
             v-model="modelValue"
-            class="w-full appearance-none bg-button-normal px-2 py-1 transition-colors hover:bg-button-highlighted focus:outline-none focus:ring-1 focus:ring-text-normal active:bg-button-pressed"
+            class="bg-button-normal hover:bg-button-highlighted focus:ring-text-normal active:bg-button-pressed w-full appearance-none px-2 py-1 transition-colors focus:ring-1 focus:outline-none"
             :required
         >
             <option v-for="(value, key) in options" :key :value class="bg-surface">
