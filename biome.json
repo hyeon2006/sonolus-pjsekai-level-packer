@@ -157,7 +157,7 @@
     },
     "overrides": [
         {
-            "includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
+            "includes": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts", "**/*.vue"],
             "linter": {
                 "rules": {
                     "complexity": {
@@ -171,10 +171,13 @@
                         "noSetterReturn": "off",
                         "noUndeclaredVariables": "off",
                         "noUnreachable": "off",
-                        "noUnreachableSuper": "off"
+                        "noUnreachableSuper": "off",
+                        "noUnusedVariables": "off",
+                        "noUnusedImports": "off"
                     },
                     "style": {
-                        "useConst": "error"
+                        "useConst": "error",
+                        "useImportType": "off"
                     },
                     "suspicious": {
                         "noClassAssign": "off",
