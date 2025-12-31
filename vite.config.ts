@@ -19,4 +19,24 @@ export default defineConfig({
             '@sonolus/free-pack/pack': packPath,
         },
     },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: (id) => {
+                    if (id.includes('sonolus-next-rush-plus-engine')) {
+                        return 'engine-data'
+                    }
+                    if (id.includes('src/pack/repository')) {
+                        return 'repository-data'
+                    }
+                    if (id.includes('node_modules')) {
+                        if (id.includes('vue')) {
+                            return 'vue-vendor'
+                        }
+                        return 'vendor'
+                    }
+                },
+            },
+        },
+    },
 })

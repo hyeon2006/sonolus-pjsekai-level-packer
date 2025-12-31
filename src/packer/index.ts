@@ -28,14 +28,27 @@ import type { PackOptions } from './options'
 import { toParticle } from './particle'
 import { toSkin } from './skin'
 import { toTag } from './tag'
+import * as assetsHelpers from './assets'
 
 export type MaybePromise<T> = T | Promise<T>
 
 export type Resource = { type: 'raw'; data: ArrayBuffer }
 export type JsonResource<T> = { type: 'json'; data: T } | Resource
 
+export type LoadedAssets = {
+    db: typeof assetsHelpers.db
+    repository: { filename: string; buffer: ArrayBuffer }[]
+    enginePlayData: ArrayBuffer
+    engineThumbnail: ArrayBuffer
+    engineWatchData: ArrayBuffer
+    enginePreviewData: ArrayBuffer
+    engineTutorialData: ArrayBuffer
+    engineConfiguration: ArrayBuffer
+    engineRom: ArrayBuffer
+}
+
 export type PackCtx = PackOptions & {
-    assets: typeof import('./assets')
+    assets: LoadedAssets 
 }
 
 export type PackEngine = (ctx: PackCtx) => MaybePromise<{
@@ -65,8 +78,6 @@ export type PackEngine = (ctx: PackCtx) => MaybePromise<{
 }>
 
 export type PackLevelData = (ctx: PackCtx) => MaybePromise<JsonResource<LevelData>>
-
-const preloadAssets = import('./assets')
 
 export const pack = async ({
     title,
@@ -194,7 +205,37 @@ export const pack = async ({
         return item
     }
 
-    const assets = await preloadAssets
+    const [
+        repository,
+        enginePlayData,
+        engineThumbnail,
+        engineWatchData,
+        enginePreviewData,
+        engineTutorialData,
+        engineConfiguration,
+        engineRom,
+    ] = await Promise.all([
+        assetsHelpers.getRepository(),
+        assetsHelpers.getEnginePlayData(),
+        assetsHelpers.getEngineThumbnailData(),
+        assetsHelpers.getEngineWatchData(),
+        assetsHelpers.getEnginePreviewData(),
+        assetsHelpers.getEngineTutorialData(),
+        assetsHelpers.getEngineConfigurationData(),
+        assetsHelpers.getEngineRomData(),
+    ])
+
+    const assets: LoadedAssets = {
+        db: assetsHelpers.db,
+        repository,
+        enginePlayData,
+        engineThumbnail,
+        engineWatchData,
+        enginePreviewData,
+        engineTutorialData,
+        engineConfiguration,
+        engineRom,
+    }
 
     for (const { filename, buffer } of assets.repository) {
         zip.file(`sonolus/repository/${filename}`, buffer)
