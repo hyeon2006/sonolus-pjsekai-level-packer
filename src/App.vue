@@ -3,11 +3,11 @@ import { version } from '@sonolus/core'
 import { version as engineVersion } from 'sonolus-next-rush-plus-engine'
 import { ref } from 'vue'
 import { version as appVersion } from '../package.json'
-import VLink from './components/VLink.vue'
 import VFileField from './components/fields/VFileField.vue'
 import VNumberField from './components/fields/VNumberField.vue'
 import VTextAreaField from './components/fields/VTextAreaField.vue'
 import VTextField from './components/fields/VTextField.vue'
+import VLink from './components/VLink.vue'
 import { pack } from './packer'
 
 const title = ref('')
