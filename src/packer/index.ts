@@ -19,6 +19,7 @@ import type {
 import { saveAs } from 'file-saver'
 import JSZip from 'jszip'
 import { gzip } from 'pako'
+import * as assetsHelpers from './assets'
 import { toBackground } from './background'
 import { toEffect } from './effect'
 import { packEngine } from './engine'
@@ -28,7 +29,6 @@ import type { PackOptions } from './options'
 import { toParticle } from './particle'
 import { toSkin } from './skin'
 import { toTag } from './tag'
-import * as assetsHelpers from './assets'
 
 export type MaybePromise<T> = T | Promise<T>
 
@@ -48,7 +48,7 @@ export type LoadedAssets = {
 }
 
 export type PackCtx = PackOptions & {
-    assets: LoadedAssets 
+    assets: LoadedAssets
 }
 
 export type PackEngine = (ctx: PackCtx) => MaybePromise<{

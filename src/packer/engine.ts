@@ -1,15 +1,23 @@
 import { databaseEngineItem } from 'sonolus-next-rush-plus-engine'
 import type { PackEngine } from '.'
-import { getEnginePlayData, getEnginePreviewData, getEngineConfigurationData, getEngineRomData, getEngineThumbnailData, getEngineTutorialData, getEngineWatchData } from './assets'
+import {
+    getEngineConfigurationData,
+    getEnginePlayData,
+    getEnginePreviewData,
+    getEngineRomData,
+    getEngineThumbnailData,
+    getEngineTutorialData,
+    getEngineWatchData,
+} from './assets'
 
 export const packEngine: PackEngine = async () => {
-    const playData = await getEnginePlayData();
-    const watchData = await getEngineWatchData();
-    const previewData = await getEnginePreviewData();
-    const tutorialData = await getEngineTutorialData();
-    const configurationData = await getEngineConfigurationData();
-    const thumbnailData = await getEngineThumbnailData();
-    const romData = await getEngineRomData();
+    const playData = await getEnginePlayData()
+    const watchData = await getEngineWatchData()
+    const previewData = await getEnginePreviewData()
+    const tutorialData = await getEngineTutorialData()
+    const configurationData = await getEngineConfigurationData()
+    const thumbnailData = await getEngineThumbnailData()
+    const romData = await getEngineRomData()
     return {
         item: {
             ...databaseEngineItem,

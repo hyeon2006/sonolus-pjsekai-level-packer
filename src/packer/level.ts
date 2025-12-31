@@ -1,6 +1,6 @@
+import type { LevelData } from '@sonolus/core'
 import { convertToLevelData } from 'sonolus-next-rush-plus-engine'
 import type { PackLevelData } from '.'
-import type { LevelData } from '@sonolus/core'
 
 export const packLevelData: PackLevelData = async ({ chart, offset }) => {
     if (!chart) throw new Error('No chart file selected')
