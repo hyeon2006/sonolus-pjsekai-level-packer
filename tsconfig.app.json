@@ -8,7 +8,6 @@
 
     "noUncheckedIndexedAccess": true,
 
-    "baseUrl": ".",
     "types": ["vite/client", "vite-plugin-arraybuffer/types"]
   }
 }
