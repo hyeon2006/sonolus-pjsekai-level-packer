@@ -32,10 +32,13 @@ import { toTag } from './tag'
 
 export type MaybePromise<T> = T | Promise<T>
 
-export type Resource = { type: 'raw'; data: ArrayBuffer }
+export interface Resource {
+    type: 'raw'
+    data: ArrayBuffer
+}
 export type JsonResource<T> = { type: 'json'; data: T } | Resource
 
-export type LoadedAssets = {
+export interface LoadedAssets {
     db: typeof assetsHelpers.db
     repository: { filename: string; buffer: ArrayBuffer }[]
     enginePlayData: ArrayBuffer
