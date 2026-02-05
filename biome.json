@@ -28,7 +28,9 @@
             "**/README.md",
             "**/tailwind.config.js",
             "**/vite.config.ts",
-            "src/**/*"
+            "src/**/*",
+            "!src/pack/**",
+            "!src/pack/*.*"
         ]
     },
     "linter": {
@@ -126,7 +128,7 @@
                 "useNamespaceKeyword": "error"
             }
         },
-        "includes": ["**", "!**/*.*", "src/**/*.*"]
+        "includes": ["**", "!**/*.*", "src/**/*.*", "!src/pack/**", "!src/pack/*.*"]
     },
     "css": {
         "parser": {
