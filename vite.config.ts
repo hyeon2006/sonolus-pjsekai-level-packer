@@ -19,9 +19,6 @@ export default defineConfig({
                     if (id.includes('sonolus-next-rush-plus-engine')) {
                         return 'engine-data'
                     }
-                    if (id.includes('src/pack/repository')) {
-                        return 'repository-data'
-                    }
                     if (id.includes('node_modules')) {
                         if (id.includes('vue')) {
                             return 'vue-vendor'
